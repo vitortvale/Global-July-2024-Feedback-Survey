@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 from dataclasses import dataclass
 
+st.set_page_config(layout="wide")
+
+
 @dataclass
 class Course:
     name: str
@@ -128,22 +131,22 @@ def survey_handling(dfnp :np.ndarray, courses_with_comma: list[str]) -> list[Cou
         course.content /= c
         course.easeToUnderstandForeignLanguage /= c
         
-        course.overall = round(course.overall, 2)
-        course.methodology = round(course.methodology, 2)
-        course.classroom = round(course.classroom, 2)
-        course.staff = round(course.staff, 2)
-        course.recommendability = round(course.staff, 2 )
-        course.objectivity = round(course.objectivity, 2)
-        course.correspondaceToExpectations = round(course.correspondaceToExpectations, 2)
-        course.textBooksPresentations = round(course.textBooksPresentations, 2)
-        course.content = round(course.content, 2)
-        course.easeToUnderstandForeignLanguage = round(course.easeToUnderstandForeignLanguage, 2)
+        course.overall = np.round(course.overall, 2)
+        course.methodology = np.round(course.methodology, 2)
+        course.classroom = np.round(course.classroom, 2)
+        course.staff = np.round(course.staff, 2)
+        course.recommendability = np.round(course.staff, 2 )
+        course.objectivity = np.round(course.objectivity, 2)
+        course.correspondaceToExpectations = np.round(course.correspondaceToExpectations, 2)
+        course.textBooksPresentations = np.round(course.textBooksPresentations, 2)
+        course.content = np.round(course.content, 2)
+        course.easeToUnderstandForeignLanguage = np.round(course.easeToUnderstandForeignLanguage, 2)
 
         L.append(course)
 
     return L
 
-def final_treatment(file_root: str) -> list[Course]: #this name has to be changed asap
+def treatment(file_root: str) -> list[Course]: #this name has to be changed asap
     survey_data = pd.read_excel(file_root)
     survey_data = survey_data.drop(survey_data.columns[[0,1,2,3,-1,-2,-3]], axis = 1) # dropped columns contained private and unuseful information
     survey_data = survey_data.drop(survey_data.index[0:425]) # dropped lines contained information from the previous years
@@ -152,13 +155,41 @@ def final_treatment(file_root: str) -> list[Course]: #this name has to be change
     courselist  = survey_handling(survey_data, courses_with_comma)
     courselist[6] = merge(courselist[6], courselist[7])
     courselist.remove(courselist[7])
+    courselist[6].overall = np.round(courselist[6].overall, 2)
+    courselist[6].methodology = np.round(courselist[6].methodology, 2)
+    courselist[6].classroom = np.round(courselist[6].classroom, 2)
+    courselist[6].staff = np.round(courselist[6].staff, 2)
+    courselist[6].recommendability = np.round(courselist[6].staff, 2 )
+    courselist[6].objectivity = np.round(courselist[6].objectivity, 2)
+    courselist[6].correspondaceToExpectations = np.round(courselist[6].correspondaceToExpectations, 2)
+    courselist[6].textBooksPresentations = np.round(courselist[6].textBooksPresentations, 2)
+    courselist[6].content = np.round(courselist[6].content, 2)
+    courselist[6].easeToUnderstandForeignLanguage = np.round(courselist[6].easeToUnderstandForeignLanguage, 2)
     courselist[8] = merge(courselist[8], courselist[9])
     courselist.remove(courselist[9])
+    courselist[8].overall = np.round(courselist[8].overall, 2)
+    courselist[8].methodology = np.round(courselist[8].methodology, 2)
+    courselist[8].classroom = np.round(courselist[8].classroom, 2)
+    courselist[8].staff = np.round(courselist[8].staff, 2)
+    courselist[8].recommendability = np.round(courselist[8].staff, 2 )
+    courselist[8].objectivity = np.round(courselist[8].objectivity, 2)
+    courselist[8].correspondaceToExpectations = np.round(courselist[8].correspondaceToExpectations, 2)
+    courselist[8].textBooksPresentations = np.round(courselist[8].textBooksPresentations, 2)
+    courselist[8].content = np.round(courselist[8].content, 2)
+    courselist[8].easeToUnderstandForeignLanguage = np.round(courselist[8].easeToUnderstandForeignLanguage, 2)
+    courselist[8].code = "HIS02"
     return courselist
  
 
 def main():
-    courselist = final_treatment(('./surveys/2024.xlsx'))
+    courselist = treatment(('./surveys/2024.xlsx'))
+    st.write("# Global July 2024 Stats 🌎")
+
+
+
+
+
+
     return courselist
 
 if __name__ == "__main__":
