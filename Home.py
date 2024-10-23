@@ -1,6 +1,5 @@
 import streamlit as st 
 import pandas as pd
-import numpy as np
 from dataclasses import dataclass
 
 st.set_page_config(layout="wide")
@@ -23,7 +22,7 @@ class Course:
 
 
 def main():
-    
+
     coursedf = pd.read_excel("./surveys/course2024.xlsx")
     courselist = coursedf.to_numpy().tolist()
     L  = []
@@ -31,7 +30,7 @@ def main():
         course = Course(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11])
         L.append(course)
 
-    st.write("# Global July 2024 Stats 🌎")
+    st.write("# Global July 2024 Feedback Survey 🌎")
 
     return L
 

@@ -1,8 +1,8 @@
-# Introduction to Painel Questionário Global - July
+# Introduction to Global July 2024 Feedback Survey
 
 ## Overview
 
-The **Painel Questionário Global - July** project is designed to generate insightful information from a questionnaire related to an event held at the **Federal University of Juiz de Fora (UFJF)**. This event included undergraduate and graduate courses covering a wide range of subjects from various areas of knowledge. The project aims to analyze data from participants to produce meaningful insights and reports about the event, providing a better understanding of the courses offered and the audience's experience.
+The **Global July 2024 Feedback Survey** project is designed to generate insightful information from a questionnaire related to an event held at the **Federal University of Juiz de Fora (UFJF)**. This event included undergraduate and graduate courses covering a wide range of subjects from various areas of knowledge. The project aims to analyze data from participants to produce meaningful insights and reports about the event, providing a better understanding of the courses offered and the audience's experience.
 
 ## Key Features
 - **Event Data Analysis**: Gathers and processes feedback from event participants.

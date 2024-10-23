@@ -1,7 +1,5 @@
 import streamlit as st
-import pandas as pd
 from Home import main
-from Home import Course
 
 courselist = main()
 
