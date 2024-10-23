@@ -13,7 +13,7 @@ The **Global July 2024 Feedback Survey** project is designed to generate insight
 ## Goals of the Project
 The primary goal of this project is to help event organizers and academic departments at UFJF understand the impact and success of the courses offered during the event. By analyzing questionnaire data, the project provides actionable insights into participant satisfaction, course effectiveness, and potential areas for improvement in future events.
 
-### Why Use Painel Questionário Global?
+### How is it meaningful to the organizers?
 - **Targeted Event Feedback**: Focuses on collecting and analyzing feedback specific to academic events, providing data-driven conclusions.
 - **Multidisciplinary Insights**: Enables analysis across a wide range of academic fields, making it useful for various departments and faculties.
 - **Actionable Reports**: Helps event organizers improve future editions based on clear feedback from participants.
