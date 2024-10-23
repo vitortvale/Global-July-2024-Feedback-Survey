@@ -1,9 +1,6 @@
 import streamlit as st
-import pandas as pd
 from Home import main
 from Home import Course
-from PIL import Image
-import math
 
 
 courselist = main()
@@ -43,31 +40,22 @@ def generate_stars(rating):
             stars += half_star 
         return stars
 
-
-#st.html(f"<h1 style = 'text-align:center;color:#d60202;font-size:80px;'>{courselist[0].code}</h1>")
-
 def main():
     cols = st.columns(4)
-    
-    # Move the container to the sidebar
-    # Inject custom CSS into the Streamlit app
-    # Inject custom CSS into the Streamlit app
+
     st.markdown(
         """
         <style>
-        /* Customize the width and background color of the sidebar */
         [data-testid="stSidebar"] {
             background-color: white; /* Sidebar background color */
             width: 300px; /* Set the width of the sidebar */
         }
 
-        /* Change the background color for content in the sidebar */
         [data-testid="stSidebar"] .css-1d391kg {
             background-color: red; /* Content background color */
             color: red; /* Text color inside the sidebar */
         }
 
-        /* Optional: Customize the scrollbar */
         [data-testid="stSidebar"] ::-webkit-scrollbar {
             color: red;
             width: 10px;
@@ -85,18 +73,12 @@ def main():
         """, unsafe_allow_html=True
     )
 
-# Create buttons in the sidebar
     with st.sidebar:
         st.write("Courses")
             
         for course in courselist:
             if st.button(course.code):
                     show_stats(course, cols)
-
-
-
-
-
 
 
 if __name__ == "__main__":
