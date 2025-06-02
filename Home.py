@@ -31,7 +31,8 @@ def main():
         L.append(course)
 
     st.write("# Global July 2024 Feedback Survey 🌎")
-
+    st.write("#### Here you can visualize the ratings given by everyone who participated in the event that took place at the Federal University of Juiz de Fora!")
+    
     return L
 
 if __name__ == "__main__":
